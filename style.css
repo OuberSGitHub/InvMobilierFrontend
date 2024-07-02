@@ -93,7 +93,7 @@ header nav a:hover {
     left: calc(60% + 400px);
 }
 
-.item .content {
+.list .item .content {
     position: absolute;
     top: 50%;
     left: 100px;
@@ -102,6 +102,11 @@ header nav a:hover {
     text-align: left;
     color: #fff;
     text-shadow: 0 0 10px black;
+    display: none;
+}
+
+.list .item:nth-child(1) .content {
+    display: block;
 }
 
 .content .title {
@@ -158,10 +163,10 @@ header nav a:hover {
 /* Navigation arrows */
 .arrows {
     position: absolute;
-    top: 88%;
-    right: 52%;
-    z-index: 100%;
-    width: 300px;
+    top: 85%;
+    left: 40%;
+    z-index: 100;
+    width: fit-content;
     max-width: 30%;
     display: flex;
     gap: 10px;
@@ -173,6 +178,74 @@ header nav a:hover {
     height: 50px;
     border-radius: 50%;
     background-color: #F2613F;
+    color : #fff;
     border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .2s ease-in;
+}
+
+.arrows button:hover {
+    cursor: pointer;
+    background-color: var(--color2);
+}
+
+/* Time running */
+.carousel .timeRunning {
+    position: absolute;
+    width: 0%;
+    z-index: 1000;
+    height: 4px;
+    background-color: var(--color3);
+    left: 0;
+    top: 0;
+    animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+    from{width: 0%;}
+    to{width: 100%;}
+}
+
+/* Responsive design */
+@media screen and (max-width: 999px) {
+    header {
+        padding-left: 50px;
+    }
+
+    .list .item .content {
+        left: 50px;
+    }
     
+    .content .title {
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    header {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    header nav a {
+        padding-left: 14px;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+
+    .list .item .content {
+        top: 40%;
+    }
+    
+    .content .title {
+        font-size: 45px;
+    }
+
+    .content .btns button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
 }
