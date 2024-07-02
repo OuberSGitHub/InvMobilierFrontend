@@ -1,0 +1,4 @@
+black #0C0C0C rgb(12, 12, 12)
+maroon #481E14 rgb(72, 30, 20)
+brown #9B3922 rgb(155, 57, 34)
+orange #F2613F rgb(242, 97, 63)
